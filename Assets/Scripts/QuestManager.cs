@@ -1,0 +1,61 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+[System.Serializable]
+public class QuestManager : MonoBehaviour
+{
+    public QuestGiver quest;
+    string questFile, initFile;
+    private void Awake()
+    {
+        questFile = Application.persistentDataPath + "/questData.data";
+        initFile = Application.dataPath + "/Scripts/questinit.json";
+    }
+    // Start is called before the first frame update
+    // On init we look for a saved quest state
+    // For first time startup we will create one that is default.
+    void Start()
+    {
+        // load saved quest state if any
+        if (File.Exists(questFile))
+        {
+            // File exists!
+            string jsonFile = File.ReadAllText(questFile);
+            JsonUtility.FromJsonOverwrite(jsonFile, quest);
+        }
+        else
+        {
+            // File does not exist.
+            string jsonFile = File.ReadAllText(initFile);
+            JsonUtility.FromJsonOverwrite(jsonFile, quest);
+        }
+    }
+    // call whenever a checkpoint is reached or quest complete
+    // this function saves the current status of the quest
+    void SaveQuestState()
+    {
+        File.WriteAllText(questFile, JsonUtility.ToJson(quest));
+    }
+    // Call this to restart the whole queststate from scratch.
+    void RestartQuestState()
+    {
+        string jsonFile = File.ReadAllText(initFile);
+        JsonUtility.FromJsonOverwrite(jsonFile, quest);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        // blank for now
+        // Invoke("TestUpdate", 2);
+    }
+    void TestUpdate()
+    {
+        Debug.Log(File.ReadAllText(questFile));
+        Debug.Log(JsonUtility.ToJson(quest.GetQuestInfo()));
+        Debug.Log(quest.GetStepInfo());
+        // test update for quests
+        quest.CompleteStep();
+    }
+}

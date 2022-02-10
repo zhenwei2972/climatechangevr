@@ -1,0 +1,29 @@
+{
+    "quest": [
+        {
+            "isActive": false,
+            "title": "Quest 1",
+            "description": "Do quest 1",
+            "currentStep": 0,
+            "step": [
+                "Do quest 1 step 1"
+            ],
+            "isCompleted": false
+        },
+        {
+            "isActive": false,
+            "title": "Quest 2",
+            "description": "Do quest 2",
+            "currentStep": 0,
+            "step": [
+                "Quest 2 step 1",
+                "Quest 2 step 2"
+            ],
+            "isCompleted": false
+        }
+    ],
+    "currentQuest": 0,
+    "player": {
+        "instanceID": 69876
+    }
+}

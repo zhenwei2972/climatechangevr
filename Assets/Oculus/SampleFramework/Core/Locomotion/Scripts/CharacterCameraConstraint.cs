@@ -64,17 +64,17 @@ public class CharacterCameraConstraint : MonoBehaviour
 	private void Awake ()
 	{
 		_character = GetComponent<CapsuleCollider>();
-		_simplePlayerController = GetComponent<SimpleCapsuleWithStickMovement>();
+		//_simplePlayerController = GetComponent<SimpleCapsuleWithStickMovement>();
 	}
 
 	private void OnEnable()
 	{
-		_simplePlayerController.CameraUpdated += CameraUpdate;
+		//_simplePlayerController.CameraUpdated += CameraUpdate;
 	}
 
 	private void OnDisable()
 	{
-		_simplePlayerController.CameraUpdated -= CameraUpdate;
+		//_simplePlayerController.CameraUpdated -= CameraUpdate;
 	}
 
 	/// <summary>

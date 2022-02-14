@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int food = 100;
-    public int water = 100;
+    public float food = 100;
+    public float water = 100;
 
-    public int Food
+    public float Food
     {
         get { return food; }
         set { food = value; }
     }
 
-    public int Water
+    public float Water
     {
         get { return water; }
         set { water = value; }

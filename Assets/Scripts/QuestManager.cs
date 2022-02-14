@@ -31,6 +31,8 @@ public class QuestManager : MonoBehaviour
             string jsonFile = File.ReadAllText(initFile);
             JsonUtility.FromJsonOverwrite(jsonFile, quest);
         }
+
+        InvokeRepeating("TestUpdate", 5.0f, 5.0f);
     }
     // call whenever a checkpoint is reached or quest complete
     // this function saves the current status of the quest
@@ -47,14 +49,9 @@ public class QuestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // blank for now
-        // Invoke("TestUpdate", 2);
     }
     void TestUpdate()
     {
-        Debug.Log(File.ReadAllText(questFile));
-        Debug.Log(JsonUtility.ToJson(quest.GetQuestInfo()));
-        Debug.Log(quest.GetStepInfo());
         // test update for quests
         quest.CompleteStep();
     }

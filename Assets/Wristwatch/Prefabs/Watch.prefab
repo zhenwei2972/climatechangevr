@@ -35,7 +35,6 @@ Transform:
   - {fileID: 4359996830858749584}
   - {fileID: 6463565724922855581}
   - {fileID: 569245047181375388}
-  - {fileID: 7456595706026495794}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,7 +330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468036696141171681}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.0575, y: 0.0726, z: 0}
+  m_LocalPosition: {x: 0.0575, y: 0.092, z: 0}
   m_LocalScale: {x: 0.0043285917, y: 0.0043285857, z: 0.004328591}
   m_Children: []
   m_Father: {fileID: 569245047181375388}
@@ -520,6 +519,7 @@ Transform:
   m_Children:
   - {fileID: 7682936591355936744}
   - {fileID: 4965221401411503827}
+  - {fileID: 7456595706026495794}
   m_Father: {fileID: 4000011301888654}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4590934152359698883}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.07263377, y: 0.0545, z: 0}
+  m_LocalPosition: {x: 0.1077, y: 0.0743, z: 0}
   m_LocalScale: {x: 0.0043285917, y: 0.0043285857, z: 0.004328591}
   m_Children: []
   m_Father: {fileID: 569245047181375388}
@@ -602,7 +602,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4590934152359698883}
-  m_Text: Do something like this Lmao
+  m_Text: This is where you type your \n quest description.
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -719,14 +719,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7456595706026495794}
   - component: {fileID: 3198187598080219007}
-  - component: {fileID: 4816230143254706363}
   - component: {fileID: 5478791027168252}
+  - component: {fileID: 4826366114457533570}
   m_Layer: 0
   m_Name: Hologram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7456595706026495794
 Transform:
@@ -735,12 +735,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7678271502540124016}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.01, y: 0.09, z: 0.55}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.03592731, y: 0.016569829, z: -0.011721825}
+  m_LocalScale: {x: 0.017314367, y: 0.017314363, z: 0.017314343}
   m_Children: []
-  m_Father: {fileID: 4000011301888654}
-  m_RootOrder: 5
+  m_Father: {fileID: 569245047181375388}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &3198187598080219007
 MeshFilter:
@@ -750,7 +750,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7678271502540124016}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4816230143254706363
+--- !u!64 &5478791027168252
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7678271502540124016}
+  m_Material: {fileID: 13400000, guid: 20b27a2b09cf5470e866c2708f9f9dc8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4826366114457533570
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -768,7 +782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4e0bfb4c082f72469533623b5fdf9b5, type: 2}
+  - {fileID: 2100000, guid: dfac63b83a0933d4fb58515400fc53bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -789,20 +803,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5478791027168252
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7678271502540124016}
-  m_Material: {fileID: 13400000, guid: 20b27a2b09cf5470e866c2708f9f9dc8, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7927421277713471041
 GameObject:
   m_ObjectHideFlags: 0

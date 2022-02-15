@@ -2,17 +2,19 @@
     "quest": [
         {
             "isActive": false,
-            "title": "Quest 1",
-            "description": "Do quest 1",
+            "title": "Chapter 1: The beginning.",
+            "description": "Gather your equipment and strength.",
             "currentStep": 0,
-            "step": [
-                "Do quest 1 step 1"
-            ],
+          "step": [
+            "Head over to the meeting room.",
+            "Head over to the meeting room.",
+            "Head over to the meeting room."
+          ],
             "isCompleted": false
         },
         {
             "isActive": false,
-            "title": "Quest 2",
+            "title": "Chapter 2: The city down under",
             "description": "Do quest 2",
             "currentStep": 0,
             "step": [

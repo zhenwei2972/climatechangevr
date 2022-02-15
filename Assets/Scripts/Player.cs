@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float food = 100;
-    public float water = 100;
+    public float food = 0.99f;
+    public float water = 0.99f;
 
     public float Food
     {

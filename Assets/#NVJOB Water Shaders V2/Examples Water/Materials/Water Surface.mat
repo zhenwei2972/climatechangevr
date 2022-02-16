@@ -136,7 +136,7 @@ Material:
     - _Albedo2Flow: 0.9
     - _Albedo2Tiling: 0.9
     - _AlbedoContrast: 0.13
-    - _AlbedoIntensity: 4.2
+    - _AlbedoIntensity: 3.57
     - _Brightness: 1
     - _BumpScale: 1
     - _Contrast: 1

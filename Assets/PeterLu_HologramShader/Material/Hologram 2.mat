@@ -78,8 +78,8 @@ Material:
     - _HoloCrowdness: 2
     - _HoloDistance: 0.065
     - _HoloGap: 0.23
-    - _HoloSpeed: 6.07
-    - _HoloValue: 0.08
+    - _HoloSpeed: 1.51
+    - _HoloValue: 1.16
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

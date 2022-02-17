@@ -9,6 +9,7 @@ TagManager:
   - Door
   - food
   - water
+  - Interactable
   layers:
   - Default
   - TransparentFX

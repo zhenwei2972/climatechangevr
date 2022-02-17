@@ -18,6 +18,7 @@ public class QuestManager : MonoBehaviour
     // For first time startup we will create one that is default.
     void Start()
     {
+        /*
         // load saved quest state if any
         if (File.Exists(questFile))
         {
@@ -31,8 +32,13 @@ public class QuestManager : MonoBehaviour
             string jsonFile = File.ReadAllText(initFile);
             JsonUtility.FromJsonOverwrite(jsonFile, quest);
         }
+        */
 
-        InvokeRepeating("TestUpdate", 5.0f, 5.0f);
+        // File does not exist.
+        string jsonFile = File.ReadAllText(initFile);
+        JsonUtility.FromJsonOverwrite(jsonFile, quest);
+        quest.ForceQuestState(0, 0);
+        //InvokeRepeating("TestUpdate", 5.0f, 5.0f);
     }
     // call whenever a checkpoint is reached or quest complete
     // this function saves the current status of the quest
@@ -49,6 +55,7 @@ public class QuestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Quest: " + quest.GetCurrentQuest());
     }
     void TestUpdate()
     {

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
-public class Consume : MonoBehaviour
+public class WaypointTrigger : MonoBehaviour
 {
-    public Player player;
+    public QuestGiver questGiver;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +20,10 @@ public class Consume : MonoBehaviour
     //Detect collisions between the GameObjects with Colliders attached
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "food")
+        if (collider.name == "Mouth" && this.gameObject.name == questGiver.GetCurrentQuest())
         {
-            player.food = player.food + 0.2f;
-            Destroy(collider.gameObject);
-        }
-        else if (collider.tag == "water")
-        {
-            player.water = player.water + 0.2f;
-            Destroy(collider.gameObject);
+            questGiver.CompleteStep();
+            Destroy(this.gameObject);
         }
     }
 }

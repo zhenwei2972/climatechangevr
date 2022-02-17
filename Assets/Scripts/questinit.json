@@ -1,29 +1,41 @@
 {
-    "quest": [
-        {
-            "isActive": false,
-            "title": "Chapter 1: The beginning.",
-            "description": "Gather your equipment and strength.",
-            "currentStep": 0,
-          "step": [
-            "Head over to the meeting room.",
-            "Head over to the meeting room.",
-            "Head over to the meeting room."
-          ],
-            "isCompleted": false
-        },
-        {
-            "isActive": false,
-            "title": "Chapter 2: The city down under",
-            "description": "Do quest 2",
-            "currentStep": 0,
-            "step": [
-                "Quest 2 step 1",
-                "Quest 2 step 2"
-            ],
-            "isCompleted": false
-        }
-    ],
+  "quest": [
+    {
+      "isActive": false,
+      "title": "Chapter 1: The beginning.",
+      "description": "Gather your equipment and strength. venture out",
+      "currentStep": 0,
+      "step": [
+        "Head over to the meeting room.",
+        "Consume the food and water.",
+        "Remove the boulders blocking the path.",
+        "Find a way to get across the damaged floor.",
+        "Leave the area."
+      ],
+      "isCompleted": false
+    },
+    {
+      "isActive": false,
+      "title": "Chapter 2: The city that never was.",
+      "description": "Once a proud city state that punches above the weight. Now a husk of its former self.",
+      "currentStep": 0,
+      "step": [
+        "Quest 2 step 1",
+        "Quest 2 step 2"
+      ],
+      "isCompleted": false
+    },
+    {
+      "isActive": false,
+      "title": "Chapter 3: RSS Invicible",
+      "description": "Once a vessel of the proud RSN.",
+      "currentStep": 0,
+      "step": [
+        "Shrink the generator."
+      ],
+      "isCompleted": false
+    }
+  ],
     "currentQuest": 0,
     "player": {
         "instanceID": 69876

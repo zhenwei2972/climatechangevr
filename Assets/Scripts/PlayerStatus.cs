@@ -25,21 +25,23 @@ public class PlayerStatus : MonoBehaviour
         waterLegend.SetSegmentCount(1);
         waterLegend.SetPercent(0.99f);
 
-        InvokeRepeating("ReduceFoodWater", 5.0f, 5.0f);
+        InvokeRepeating("ReduceFoodWater", 10.0f, 10.0f);
     }
     // Update is called once per frame
     void Update()
     {
+        foodBar.SetPercent(player.food);
+        waterBar.SetPercent(player.water);
+        //foodBar.AddRemovePercent(0.99f - player.food);
+        //waterBar.AddRemovePercent(0.99f - player.water);
+        //foodBar.AddRemovePercent(0.1f);
+        //waterBar.AddRemovePercent(0.1f);
         questTitle.text = questGiver.GetQuestInfo().title;
-        questInfo.text = questGiver.GetQuestInfo().description;
+        questInfo.text = questGiver.GetStepInfo();
     }
     void ReduceFoodWater()
     {
         player.food = player.food - 0.1f;
         player.water = player.water - 0.1f;
-        foodBar.SetPercent(player.food);
-        waterBar.SetPercent(player.water);
-        foodBar.AddRemovePercent(0.1f);
-        waterBar.AddRemovePercent(0.1f);
     }
 }

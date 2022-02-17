@@ -47,4 +47,13 @@ public class QuestGiver : MonoBehaviour
             quest[currentQuest].currentStep++;
         }
     }
+    public string GetCurrentQuest()
+    {
+        return quest[currentQuest].currentStep.ToString();
+    }
+    public void ForceQuestState(int q, int s)
+    {
+        currentQuest = q;
+        quest[currentQuest].currentStep = s;
+    }
 }

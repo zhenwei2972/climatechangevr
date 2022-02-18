@@ -9,7 +9,7 @@ public class ShootingScript : MonoBehaviour
     public GameObject particle;
     public GameObject particleTarget;
     public GameObject particle2;
-
+    public int scaleSpeed =5;
     private Vector3 scaleChange;
     private bool canScale = false;
     public GameObject hitObject;
@@ -33,17 +33,15 @@ public class ShootingScript : MonoBehaviour
             
             if (Physics.Raycast(ray, out hitData, 40))
             {
-                particle2.SetActive(false);
+               
                 hitObject = hitData.transform.gameObject;
-                Debug.DrawRay(ray.origin, ray.direction * 100000, Color.green);
-                Debug.Log("Activate Tractor Beam!");
-                Debug.Log(hitObject);
                 //turn on particle but set to hit object 
               
                 //enable scale changing only if valid object 
                 if (hitObject.tag == "Interactable")
                 {
                     particleTarget.transform.position = hitObject.transform.position;
+                    particle2.SetActive(false);
                     particle.SetActive(true);
                     scaleChange = new Vector3(4f, 4f, 4f);
                     try
@@ -70,7 +68,7 @@ public class ShootingScript : MonoBehaviour
             if (canScale)
             {
                 Debug.Log("Trying to scale!");
-                hitObject.transform.localScale += scaleChange*Time.deltaTime*3;
+                hitObject.transform.localScale += scaleChange*Time.deltaTime* scaleSpeed;
             }
 
         }
@@ -80,7 +78,7 @@ public class ShootingScript : MonoBehaviour
             if (canScale)
             {
                 Debug.Log("Trying to scale!");
-                hitObject.transform.localScale -= scaleChange * Time.deltaTime*3;
+                hitObject.transform.localScale -= scaleChange * Time.deltaTime* scaleSpeed;
             }
 
         }
@@ -91,8 +89,18 @@ public class ShootingScript : MonoBehaviour
             particle2.SetActive(false);
             particle.SetActive(false);
             hitObject.transform.SetParent(null);
-            hitObject.GetComponent<Rigidbody>().useGravity = true;
-            hitObject.GetComponent<Rigidbody>().isKinematic = false;
+            if (hitObject.tag == "Interactable")
+            {
+                try
+                {
+                    hitObject.GetComponent<Rigidbody>().useGravity = true;
+                    hitObject.GetComponent<Rigidbody>().isKinematic = false;
+                }
+                catch(Exception e)
+                {
+
+                }
+            }
             canScale = false;
         }
        // Vector2 input = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);

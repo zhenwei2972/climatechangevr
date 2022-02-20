@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class WaypointTrigger : MonoBehaviour
@@ -24,6 +25,12 @@ public class WaypointTrigger : MonoBehaviour
         {
             questGiver.CompleteStep();
             Destroy(this.gameObject);
+        }
+        if (collider.name == "Arc" && this.gameObject.name == questGiver.GetCurrentQuest())
+        {
+            questGiver.CompleteStep();
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("NewLevel1");
         }
     }
 }

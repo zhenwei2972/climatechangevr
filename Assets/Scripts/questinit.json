@@ -2,7 +2,7 @@
   "quest": [
     {
       "isActive": false,
-      "title": "Chapter 1: The beginning.",
+      "title": "Chapter 1: Awakening",
       "description": "Gather your equipment and strength. venture out",
       "currentStep": 0,
       "step": [
@@ -16,12 +16,14 @@
     },
     {
       "isActive": false,
-      "title": "Chapter 2: The city that never was.",
+      "title": "Chapter 2: The city that never was",
       "description": "Once a proud city state that punches above the weight. Now a husk of its former self.",
       "currentStep": 0,
       "step": [
-        "Quest 2 step 1",
-        "Quest 2 step 2"
+        "Explore the city.",
+        "Find a way pass the cars",
+        "Clear away the benches somehow, to cross over.",
+        "Find way to get into the submarine.",
       ],
       "isCompleted": false
     },
@@ -31,7 +33,7 @@
       "description": "Once a vessel of the proud RSN.",
       "currentStep": 0,
       "step": [
-        "Shrink the generator."
+        "Find and shrink the generator.",
       ],
       "isCompleted": false
     }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -32,12 +33,13 @@ public class PlayerStatus : MonoBehaviour
     {
         foodBar.SetPercent(player.food);
         waterBar.SetPercent(player.water);
-        //foodBar.AddRemovePercent(0.99f - player.food);
-        //waterBar.AddRemovePercent(0.99f - player.water);
-        //foodBar.AddRemovePercent(0.1f);
-        //waterBar.AddRemovePercent(0.1f);
         questTitle.text = questGiver.GetQuestInfo().title;
         questInfo.text = questGiver.GetStepInfo();
+
+        if (player.food <= 0 || player.water <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     void ReduceFoodWater()
     {

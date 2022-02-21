@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(AudioSource))]
 [System.Serializable]
 public class PlayerStatus : MonoBehaviour
 {
@@ -14,7 +14,9 @@ public class PlayerStatus : MonoBehaviour
     public UltimateCircularHealthBar foodBar, waterBar, foodLegend, waterLegend;
     public TextMesh questTitle;
     public TextMesh questInfo;
-    //public TextMeshProUGUI mText;
+    public TextMeshProUGUI mText;
+    public Animator subAnimator;
+    public AudioSource audioData;
 
     // Start is called before the first frame update
     void Start()
@@ -41,20 +43,28 @@ public class PlayerStatus : MonoBehaviour
 
         if (player.food <= 0.2f || player.water <= 0.2f)
         {
-            // play music
-            InvokeRepeating("AlertFoodWater", 2.5f, 2.5f);
+            if (!audioData.isPlaying)
+            {
+                audioData.Play();
+            }
         }
         else
         {
-            CancelInvoke("AlertFoodWater");
+            if (audioData.isPlaying)
+            {
+                audioData.Stop();
+            }
         }
 
         if (player.food <= 0 || player.water <= 0)
         {
-            //mText.text = "You ran out of food or water and died. Make sure you keep track of your food and water levels.";
-            //subAnimator.Play("subtitle", -1, 0f);
-            //subAnimator.Play("Subtitles", -1, 0f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (subAnimator != null)
+            {
+                mText.text = "You ran out of food or water. Make sure you keep tab of your food and water.";
+                subAnimator.Play("subtitle", 1, 3f);
+                subAnimator.Play("Subtitles", 1, 3f);
+                Invoke("InitDeath", 3);
+            }
         }
     }
     void ReduceFoodWater()
@@ -62,8 +72,8 @@ public class PlayerStatus : MonoBehaviour
         player.food = player.food - 0.1f;
         player.water = player.water - 0.1f;
     }
-    void AlertFoodWater()
+    void InitDeath()
     {
-        //audioData.Play(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

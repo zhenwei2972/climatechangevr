@@ -76,8 +76,6 @@ public class Subtitles : MonoBehaviour
                     mText.text = "";
                     break;
             }
-            // mText.GetComponent<Animator>().Play("subtitle");
-            Debug.Log("Subtitle Switched");
             subAnimator.Play("subtitle", - 1, 0f);
             subAnimator.Play("Subtitles", - 1, 0f);
             Destroy(this.gameObject);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 public class ShootingScript : MonoBehaviour
 {
   //  public OVRGrabbable ovrGrabbable;
@@ -13,6 +14,8 @@ public class ShootingScript : MonoBehaviour
     private Vector3 scaleChange;
     private bool canScale = false;
     public GameObject hitObject;
+    public bool isStart = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,7 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+      
 
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
         {
@@ -61,6 +64,11 @@ public class ShootingScript : MonoBehaviour
           
 
         }
+        if(isStart && OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        {
+        SceneManager.LoadScene("NewLevel1", LoadSceneMode.Single);
+            isStart = false;
+    }
 
         if (canScale && OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {

@@ -30,7 +30,7 @@ public class PlayerStatus : MonoBehaviour
         waterLegend.SetSegmentCount(1);
         waterLegend.SetPercent(0.99f);
 
-        InvokeRepeating("ReduceFoodWater", 15.0f, 15.0f);
+        InvokeRepeating("ReduceFoodWater", 13.0f, 13.0f);
     }
     // Update is called once per frame
     void Update()

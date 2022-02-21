@@ -35,8 +35,19 @@ public class QuestManager : MonoBehaviour
         */
 
         // File does not exist.
-        string jsonFile = File.ReadAllText(initFile);
-        JsonUtility.FromJsonOverwrite(jsonFile, quest);
+        if (quest.currentQuest == 0)
+        {
+            string jsonFile = File.ReadAllText(initFile);
+            JsonUtility.FromJsonOverwrite(jsonFile, quest);
+        }
+        else
+        {
+            int q = quest.currentQuest;
+            string jsonFile = File.ReadAllText(initFile);
+            JsonUtility.FromJsonOverwrite(jsonFile, quest);
+            quest.ForceQuestState(q, 0);
+            Debug.Log("Quest now: " + quest.currentQuest);
+        }
         // quest.ForceQuestState(0, 0);
         //InvokeRepeating("TestUpdate", 5.0f, 5.0f);
     }

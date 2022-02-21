@@ -21,8 +21,10 @@ public class WaypointTrigger : MonoBehaviour
     //Detect collisions between the GameObjects with Colliders attached
     void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Trigger before " + questGiver.GetCurrentQuest());
         if (collider.name == "Mouth" && this.gameObject.name == questGiver.GetCurrentQuest())
         {
+            Debug.Log("Trigger " + questGiver.GetCurrentQuest());
             questGiver.CompleteStep();
             Destroy(this.gameObject);
         }

@@ -8,17 +8,6 @@ public class Subtitles : MonoBehaviour
 {
     public TextMeshProUGUI mText;
     public Animator subAnimator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider collider)
     {
@@ -76,8 +65,6 @@ public class Subtitles : MonoBehaviour
                     mText.text = "";
                     break;
             }
-            // mText.GetComponent<Animator>().Play("subtitle");
-            Debug.Log("Subtitle Switched");
             subAnimator.Play("subtitle", - 1, 0f);
             subAnimator.Play("Subtitles", - 1, 0f);
             Destroy(this.gameObject);

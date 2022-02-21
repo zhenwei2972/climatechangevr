@@ -8,7 +8,7 @@
       "step": [
         "Head over to the meeting room.",
         "Consume the food and water.",
-        "Remove the boulders blocking the path.",
+        "Pick up the gun and remove the boulders blocking the path.",
         "Find a way to get across the damaged floor.",
         "Leave the area."
       ],
@@ -23,7 +23,7 @@
         "Explore the city.",
         "Find a way pass the cars",
         "Clear away the benches somehow, to cross over.",
-        "Find way to get into the submarine.",
+        "Find way to get into the submarine."
       ],
       "isCompleted": false
     },
@@ -33,7 +33,7 @@
       "description": "Once a vessel of the proud RSN.",
       "currentStep": 0,
       "step": [
-        "Find and shrink the generator.",
+        "Find and shrink the generator."
       ],
       "isCompleted": false
     }

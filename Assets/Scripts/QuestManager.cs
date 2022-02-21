@@ -37,7 +37,7 @@ public class QuestManager : MonoBehaviour
         // File does not exist.
         string jsonFile = File.ReadAllText(initFile);
         JsonUtility.FromJsonOverwrite(jsonFile, quest);
-        quest.ForceQuestState(0, 0);
+        // quest.ForceQuestState(0, 0);
         //InvokeRepeating("TestUpdate", 5.0f, 5.0f);
     }
     // call whenever a checkpoint is reached or quest complete
@@ -61,5 +61,10 @@ public class QuestManager : MonoBehaviour
     {
         // test update for quests
         quest.CompleteStep();
+    }
+
+    public QuestGiver GetQuestGiver()
+    {
+        return quest;
     }
 }

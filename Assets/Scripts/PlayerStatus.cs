@@ -33,6 +33,7 @@ public class PlayerStatus : MonoBehaviour
     {
         foodBar.SetPercent(player.food);
         waterBar.SetPercent(player.water);
+
         questTitle.text = questGiver.GetQuestInfo().title;
         questInfo.text = questGiver.GetStepInfo();
 

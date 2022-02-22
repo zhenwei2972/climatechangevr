@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8259287026244333601}
+  - component: {fileID: 5349655598673583617}
   m_Layer: 0
   m_Name: ConcreteFence
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5349655598673583617
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50434446739132408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36665908, y: 1.3317105, z: 0.7370813}
+  m_Center: {x: 0.011497107, y: -0.16585527, z: 0.24238475}
 --- !u!1001 &2590223793897757842
 PrefabInstance:
   m_ObjectHideFlags: 0
